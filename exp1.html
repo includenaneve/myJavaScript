@@ -2,19 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="js/exp1.js"></script>
     <title>exp1</title>
 </head>
 <body>
-    <p>This is a paragraph of HTML</p>
-    <script>
-        function movenon() {
-            var answer = confirm("准备好了吗?");
-            if(answer)
-            {
-                window.location = "http://github.com";
-            }
-        }
-        setTimeout(movenon,3000);
-    </script>
+<table>
+    <tr><th>输入贷款资料：</th>
+        <td></td>
+        <th>贷款余额，累积权益和利息支出</th></tr>
+    <tr><td>贷款金额（$）：</td>
+        <td><input id="amount" onchange="calculate();"></td>
+        <td rowspan=8>
+            <canvas id="graph" width="400" height="250"></canvas></td></tr>
+    <tr><td>年利率（％）：</td>
+        <td><input id="apr" onchange="calculate();"></td></tr>
+    <tr><td>还款期（年）：</td>
+        <td><input id="years" onchange="calculate();"></td>
+    <tr><td>邮政编码（寻找贷方）：</td>
+        <td><input id="zipcode" onchange="calculate();"></td>
+    <tr><th>大致付款：</th>
+        <td><button onclick="calculate();">计算</button></td></tr>
+    <tr><td>每月支付：</td>
+        <td>$<span class="output" id="payment"></span></td></tr>
+    <tr><td>总付款：</td>
+        <td>$<span class="output" id="total"></span></td></tr>
+    <tr><td>总利息：</td>
+        <td>$<span class="output" id="totalinterest"></span></td></tr>
+</table>
 </body>
 </html>
