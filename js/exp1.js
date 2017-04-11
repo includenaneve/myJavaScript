@@ -19,7 +19,7 @@ function calculate() {
      * isFinite() 检测数组元素是否有界
      * toFixed() 四舍五入指定小数位数
      */
-    if (isFinite(monthly)) //如果monthly有界
+    if (isFinite(monthly)) // monthly不是Nan、Infinity、-Infinity的时候返回true(infinity是正无穷)
     {
         payment.innerHTML = monthly.toFixed(2);
         total.innerHTML = (monthly * payments).toFixed(2);
